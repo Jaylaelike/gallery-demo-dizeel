@@ -1,8 +1,7 @@
-import { log } from "console";
-import Link from "next/link";
+import { db } from "~/server/db";
 
-import db from "~/server/db";
-
+export const dynamic = "force-dynamic";
+  
 const mockUrls = [
   "https://utfs.io/f/048732e4-5da2-4cec-b3fe-bd7dfd3774ac-ejso3p.png",
   "https://utfs.io/f/9a0a558c-6d46-49fd-89a9-58621a28308d-ejso2u.png",
