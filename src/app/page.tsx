@@ -4,6 +4,8 @@ import { getMyImages } from "~/server/queries";
 
 export const dynamic = "force-dynamic";
 
+import Image from "next/image";
+
 // const mockUrls = [
 //   "https://utfs.io/f/048732e4-5da2-4cec-b3fe-bd7dfd3774ac-ejso3p.png",
 //   "https://utfs.io/f/9a0a558c-6d46-49fd-89a9-58621a28308d-ejso2u.png",
@@ -21,14 +23,20 @@ async function Images() {
   console.log(images);
 
   return (
-    <div className="flex flex-wrap gap-4">
+    <div className="flex flex-wrap justify-center gap-4">
       {/* {images.map((post) => (
       <div key={post.id}>{post.name} </div>
     ))} */}
 
       {images.map((image) => (
-        <div key={image.id} className="w-48">
-          <img src={image.url} alt="image" />
+        <div key={image.id} className="flex h-48 w-48 flex-col">
+          <Image
+            src={image.url}
+            style={{ objectFit: "contain" }}
+            width={192}
+            height={192}
+            alt={image.name}
+          />
           <div> {image.name}</div>
         </div>
       ))}
