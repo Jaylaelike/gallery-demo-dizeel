@@ -5,6 +5,7 @@ import { getMyImages } from "~/server/queries";
 export const dynamic = "force-dynamic";
 
 import Image from "next/image";
+import Link from "next/link";
 
 // const mockUrls = [
 //   "https://utfs.io/f/048732e4-5da2-4cec-b3fe-bd7dfd3774ac-ejso3p.png",
@@ -30,6 +31,7 @@ async function Images() {
 
       {images.map((image) => (
         <div key={image.id} className="flex h-48 w-48 flex-col">
+          <Link href={`/img/${image.id}`}> 
           <Image
             src={image.url}
             style={{ objectFit: "contain" }}
@@ -37,6 +39,7 @@ async function Images() {
             height={192}
             alt={image.name}
           />
+          </Link>
           <div> {image.name}</div>
         </div>
       ))}
