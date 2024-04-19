@@ -24,7 +24,7 @@ async function Images() {
   console.log(images);
 
   return (
-    <div className="flex flex-wrap justify-center gap-4">
+    <div className="flex flex-wrap justify-center gap-4 p-4">
       {/* {images.map((post) => (
       <div key={post.id}>{post.name} </div>
     ))} */}
